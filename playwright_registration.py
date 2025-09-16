@@ -22,5 +22,4 @@ with sync_playwright() as playwright:
     dashboard_header = page.get_by_test_id('dashboard-toolbar-title-text')
     expect(dashboard_header).to_be_visible()
 
-    # Пауза на 5 секунд, чтобы увидеть результат
     page.wait_for_timeout(5000)
