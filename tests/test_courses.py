@@ -1,3 +1,4 @@
+#import pytest
 from playwright.sync_api import sync_playwright, expect
 
 
@@ -5,9 +6,11 @@ REGISTRATION_LINK = 'https://nikita-filonov.github.io/qa-automation-engineer-ui-
 COURSES_LINK = 'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses'
 
 
+@pytest.mark.courses
+@pytest.mark.regression
 def test_empty_courses_list():
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True)
+        browser = playwright.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
         page.goto(REGISTRATION_LINK)
@@ -31,7 +34,7 @@ def test_empty_courses_list():
 
 
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True)
+        browser = playwright.chromium.launch(headless=False)
         context = browser.new_context(storage_state='browser-state.json')
         page = context.new_page()
 
