@@ -26,14 +26,7 @@ class RegistrationPage(BasePage):
 
     def click_registration_button(self):
         self.registration_button.click()
-    '''
-    def save_storage_state(self, path: str):
-        self.page.context.storage_state(path=path)
-    '''
-    def new_context_with_storage(self, path: str):
-        browser = self.page.context.browser
-        self.context = browser.new_context(storage_state=path)
-        self.page = self.context.new_page()
+
 
 
 
