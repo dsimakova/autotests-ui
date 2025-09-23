@@ -16,5 +16,5 @@ def test_successful_registration(registration_page: RegistrationPage, dashboard_
     registration_page.click_registration_button()
 
     dashboard_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
-    dashboard_page.dashboard_title_check()
+    dashboard_page.check_dashboard_title()
 
