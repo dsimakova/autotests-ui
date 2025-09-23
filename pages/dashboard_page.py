@@ -8,6 +8,10 @@ class DashboardPage(BasePage):
         super().__init__(page)
         self.dashboard_title = page.get_by_test_id('dashboard-toolbar-title-text')
 
+
     def dashboard_title_check(self):
         expect(self.dashboard_title).to_be_visible()
+        expect(self.dashboard_title).to_have_text('Dashboard')
+
+
 
