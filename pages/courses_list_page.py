@@ -10,7 +10,6 @@ class CoursesListPage(BasePage):
         super().__init__(page)
 
         self.navbar = NavbarComponent(page)
-
         self.sidebar = SidebarComponent(page)
 
 
